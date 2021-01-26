@@ -17,7 +17,7 @@ import com.guillesoft.testmvvmkotlin.viewmodel.login.LoginViewModelFactory
 import es.dmoral.toasty.Toasty
 
 /**
- * 5:
+ * 6:
  * Se extiende la clase desde LoginResultCallBacks
  * Se implementan metodos
  * Se cambia la forma en que se infla la vista
