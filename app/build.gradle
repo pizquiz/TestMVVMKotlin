@@ -46,13 +46,16 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.app_compat
+    implementation deps.constraint_layout
+    implementation deps.material
+    implementation deps.legacy
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // Navigation Component
     implementation deps.navigation.fragment_ktx
     implementation deps.navigation.ui_ktx
 
-    implementation deps.app_compat
-    implementation deps.constraint_layout
-    implementation deps.material
-    implementation deps.legacy
+    // Toasty
+    implementation deps.toasty
 }
