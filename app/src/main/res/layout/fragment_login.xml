@@ -1,15 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- 5:
+ Se cambia el Fragment por layout
+ Se crea una variable viewModel con la etiqueta <data>
+ Se crea la interfaz con sus respectivos listener y onClick
+ -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.guillesoft.testmvvmkotlin.viewmodel.login.LoginViewModel" />
+    </data>
 
     <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/btn_login"
-        android:text="Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".view.LoginFragment">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/txtUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="User name"
+            android:inputType="textPersonName"
+            app:addTextChangedListener="@{viewModel.emailTextWatcher}"/>
+
+        <EditText
+            android:id="@+id/txtPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="numberPassword"
+            app:addTextChangedListener="@{viewModel.passwordTextWatcher}"/>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel::onLoginClicked}"
+            android:text="Login" />
+    </LinearLayout>
+
+</layout>

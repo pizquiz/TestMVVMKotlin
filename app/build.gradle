@@ -14,7 +14,7 @@ android {
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
         versionCode 1
-        versionName "0.2.0"
+        versionName "0.3.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -55,6 +55,9 @@ dependencies {
     // Navigation Component
     implementation deps.navigation.fragment_ktx
     implementation deps.navigation.ui_ktx
+
+    // LifeCycle
+    implementation deps.lifecycle.extensions
 
     // Toasty
     implementation deps.toasty
