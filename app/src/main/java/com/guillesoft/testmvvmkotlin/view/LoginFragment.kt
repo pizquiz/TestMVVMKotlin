@@ -50,6 +50,7 @@ class LoginFragment : Fragment(), LoginResultCallBacks {
 
     override fun onSuccess(message: String) {
         context?.let { Toasty.success(it, message, Toast.LENGTH_SHORT, true).show() }
+        view?.let { Navigation.findNavController(it).navigate(R.id.principalFragment) }
     }
 
     override fun onError(message: String) {

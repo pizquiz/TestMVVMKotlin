@@ -13,7 +13,9 @@
 
         <action
             android:id="@+id/action_loginFragment_to_principalFragment"
-            app:destination="@id/principalFragment" />
+            app:destination="@id/principalFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
 
     </fragment>
 
